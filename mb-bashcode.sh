@@ -1,1 +1,17 @@
 # This is the repository for Bash Code learned in Teckperfect Devops course
+
+# Choosing to install Apache or Mysql
+
+#!/bin/bash
+read -p "Hello, please enter your name to begin" my_var
+echo "Thank you! ${my_var}"
+while true; do
+read -p "${my_var}, please press (A) to install Apache2 Web Server or (S) to install MySQL database server." as
+case $as in
+[Aa]* )sudo apt update -y && sudo apt install -y apache2;
+break;;
+[Ss]* )sudo apt update -y && sudo apt install -y mysql-server-8.0;
+break;;
+* ) echo "Please answer A for Apache2 or S for MySQL.";
+esac
+done
